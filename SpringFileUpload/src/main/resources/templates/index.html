@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" lang="en">
+
+<head>
+<title>File Upload</title>
+<meta charset="utf-8">
+</head>
+<body>
+	<th:block th:include="/menu"></th:block>
+	<h3>Kyocera Solar File Set up</h3>
+
+	<ul>
+		<li><a th:href="@{/uploadOneFile}">Input One File</a></li>
+		<li><a th:href="@{/uploadMultiFile}">Input Multi Files</a></li>
+	</ul>
+</body>
+</html>

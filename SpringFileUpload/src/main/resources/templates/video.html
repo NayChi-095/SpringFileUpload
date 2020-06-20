@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" lang="en">
+
+<head>
+<title>File Upload</title>
+<meta charset="utf-8">
+</head>
+<body>
+<div id="video-container">
+    <video id="hp-video-player" controls="controls" preload="auto" loop="true" autoplay="autoplay">
+    <source type="video/mp4" src="../videos/solar.mp4">
+    <source type="video/webm" src="../videos/solar.webm">
+    </video> 
+  <!--  Controls -->
+  <div id="video-controls">
+    <button type="button" id="play-pause">Play</button>
+    <button type="button" id="stop">Stop-Hide</button>
+  </div>
+</div>
+<script type="text/javascript">
+        window.onload = function() { 
+          // Video
+          var video = document.getElementById("video");  
+          // Buttons
+          var playButton = document.getElementById("play-pause");
+          var stopHideButton = document.getElementById("stop");
+          //Now that that stuff is setup, you can script the functions for the buttons
+          playButton.addEventListener("click", function() {
+            if (video.paused == true) {
+                video.play(); // Play video and change play button text to 'pause'
+                playButton.innerHTML = "Pause";
+            } else {
+                video.pause(); //Pause the video and change text to 'play'
+                playButton.innerHTML = "Play";
+            }   
+          });
+                stopHideButton.addEventListener("click", function(){
+                video.pause();
+        //Now you can remove it a few ways. One being setting the source to Null
+                video.src="";
+        //or two, remove the div containing the video completely
+              video.parentNode.removeChild(video);
+
+          });
+        }
+</script>
+</body>
+</html>

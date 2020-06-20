@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" lang="en">
+
+<head>
+<title>File Upload Result</title>
+<meta charset="utf-8">
+</head>
+<body>
+	<th:block th:include="/menu"></th:block>
+	Description:
+	<span th:utext="${description}"></span>
+	<br />
+	<h3>Uploaded Result Files:</h3>
+	<ul th:each="file:${uploadedFiles}">
+		<li th:utext="${file}"></li>
+	</ul>
+
+	<h3>Failed</h3>
+	<ul th:each="file:${failedFiles}">
+		<li style="color: red;" th:utext="${file}"></li>
+	</ul>
+</body>
+</html>

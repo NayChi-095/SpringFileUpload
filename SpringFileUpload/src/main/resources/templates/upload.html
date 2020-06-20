@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" lang="en">
+
+<head>
+<title>File Upload</title>
+<meta charset="utf-8">
+</head>
+<body>
+<h1>Kyocera File Upload System Set up</h1>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+<input type="file" name="file"/><br><br/>
+<input type="submit" value="Upload">
+</form>
+</body>
+</html>

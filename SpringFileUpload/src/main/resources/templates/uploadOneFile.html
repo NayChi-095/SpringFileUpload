@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" lang="en">
+
+<head>
+<title>File Upload</title>
+<meta charset="utf-8">
+</head>
+<body>
+<th:block th:include="/menu"></th:block>
+<h3>You can upload file input set up.</h3>
+<!--  MyUploadForm  -->
+ <form th:object="${myUploadForm}" method="POST" action="" enctype="multipart/form-data">
+Description<br>
+<input th:field="*{description}" style="width: 500px;"/>
+<br/><br/>
+File to Upload:<input th:field="*{fileDatas}" type="file">
+<br>
+<input type="submit" value="upload">
+</form>
+</body>
+</html>
